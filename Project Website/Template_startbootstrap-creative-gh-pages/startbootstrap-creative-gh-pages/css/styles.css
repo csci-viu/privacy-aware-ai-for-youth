@@ -2506,7 +2506,7 @@ textarea.form-control-lg {
 .input-group > .form-select,
 .input-group > .form-floating {
   position: relative;
-  flex: 1 1 auto;
+  /* flex: 1 1 auto; */
   width: 1%;
   min-width: 0;
 }
@@ -10917,7 +10917,7 @@ hr.divider-light {
     color: #212529;
   }
   #mainNav.navbar-shrink .navbar-brand:hover {
-    color: #f4623a;
+    color: var(--bs-nav-link-hover-color);
   }
   #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link {
     color: #212529;
