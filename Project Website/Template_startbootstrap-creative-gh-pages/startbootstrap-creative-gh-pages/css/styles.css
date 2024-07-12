@@ -1278,6 +1278,7 @@ progress {
   .col-lg-3 {
     flex: 0 0 auto;
     width: 25%;
+    transition: transform 0.3s;
   }
   .col-lg-4 {
     flex: 0 0 auto;
@@ -8082,7 +8083,7 @@ textarea.form-control-lg {
 
 .text-white {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+  /* color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important; */
 }
 
 .text-body {
@@ -8163,7 +8164,8 @@ textarea.form-control-lg {
 
 .bg-dark {
   --bs-bg-opacity: 1;
-  background-color: #0078b3;
+  /* change  */
+  background-color: #e4e7e9;
 }
 
 .bg-black {
@@ -11012,7 +11014,7 @@ header.masthead h1, header.masthead .h1 {
 }
 
   .team-member {
-        background-color: #2a2a2a;
+        background-color: #0078b3;
         padding: 20px;
         margin: 10px 0;
         border-radius: 10px;
@@ -11100,6 +11102,10 @@ header.masthead h1, header.masthead .h1 {
 
   .btn-light:hover {
       color: #ffffff;
-      background-color: #054363;
+      background-color: #0078b3;
       border-color: #054363;
   }
+
+ .col-lg-3:hover{
+    transform: translateY(-10px);
+ }
