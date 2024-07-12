@@ -11014,7 +11014,7 @@ header.masthead h1, header.masthead .h1 {
 }
 
   .team-member {
-        background-color: #0078b3;
+        background-color: #e4e7e9;
         padding: 20px;
         margin: 10px 0;
         border-radius: 10px;
@@ -11023,12 +11023,12 @@ header.masthead h1, header.masthead .h1 {
 
     .team-member h3 {
         margin-top: 0;
-        color: #ffffff;
+        color: black;
     }
 
     .team-member .role,
     .team-member .department {
-        color: #cccccc;
+        color: black;
     }
 
     .team-member:hover {
@@ -11058,7 +11058,7 @@ header.masthead h1, header.masthead .h1 {
 
     /* publication */
     .publication {
-      background-color: #0078b3;
+      background-color: #e4e7e9;
       padding: 20px;
       margin-bottom: 20px;
       border-radius: 10px;
@@ -11072,12 +11072,12 @@ header.masthead h1, header.masthead .h1 {
 
   .publication-title {
       margin-top: 0;
-      color: #ffffff;
+      color: black;
   }
 
   .publication-author,
   .publication-date {
-      color: #cccccc;
+      color: black;
   }
 
   .divider-light {
