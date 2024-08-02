@@ -118,14 +118,14 @@
                         <div class="mt-5">
                             <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">Interviews</h3>
-                            <p class="text-muted mb-0">In-depth interviews for individual perspectives from educators and parents, and AI developers and researchers. <a href="#" onclick="generateEmail()">Connect with us</a> to participate, with or without survey completion.</p>
+                            <p class="text-muted mb-0">In-depth interviews for individual perspectives from educators and parents, and AI developers and researchers. <a href="#" onclick="generateEmail1()">Connect with us</a> to participate, with or without survey completion.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
                             <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">Focus Group Study</h3>
-                            <p class="text-muted mb-0">Peer discussions in focus groups for educators and parents, and AI developers and researchers. <a href="#" onclick="generateEmail()">Connect with us</a> to join, with or without survey participation.</p>
+                            <p class="text-muted mb-0">Peer discussions in focus groups for educators and parents, and AI developers and researchers. <a href="#" onclick="generateEmail2()">Connect with us</a> to join, with or without survey participation.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
@@ -242,7 +242,7 @@
                     </div>
                 </div>
                 <!-- comment: need to add mail -->
-                <a class="btn btn-light btn-xl mt-4" id="connectWithUs" href="#" onclick="generateEmail()">Connect with Us</a>
+                <a class="btn btn-light btn-xl mt-4" id="connectWithUs" href="#" onclick="sendEmail()">Connect with Us</a>
             </div>
         </section>
         
@@ -315,8 +315,8 @@
             }
         </script>
 
-<script>
-    function generateEmail() {
+<!-- <script>  //Prompt enabled user interaction to get input
+    function generateEmail1() {
         // Prompt for user details and role selection
         const userName = prompt('Please enter your name:');
         const role = prompt('Select your role (educator/parent/AI developer/researcher):').toLowerCase();
@@ -349,6 +349,50 @@
 
                 // Open the default email client with the constructed email
                 window.location.href = `mailto:ajay.shrestha@viu.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+</script> -->
+
+<script>
+    function generateEmail1() {
+        const userEmail = document.getElementById('userEmail').value;
+        const email = 'ajay.shrestha@viu.ca'; 
+        const subject = 'Interest in Participating in Research Project';
+        const body = encodeURIComponent(`Dear Researcher,
+
+        I am writing to express my interest in participating in your research project titled “Safeguarding Tomorrow's Data Landscape: Young Digital Citizens' Perspectives on Privacy within AI Systems.”
+
+        I am interested in contributing as a [**ADD Your Role: Educators and Parents, and AI developers and researchers**] and would like to participate in the In-Depth Interviews.
+
+        Please let me know the next steps and any additional information needed from my side to facilitate my participation.
+
+        Thank you for considering my involvement. I look forward to your response.
+
+        Best regards,
+        ${userEmail}`);
+                    
+                    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
+    }
+</script>
+
+<script>
+    function generateEmail2() {
+        const userEmail = document.getElementById('userEmail').value;
+        const email = 'ajay.shrestha@viu.ca'; 
+        const subject = 'Interest in Participating in Research Project';
+        const body = encodeURIComponent(`Dear Researcher,
+
+        I am writing to express my interest in participating in your research project titled “Safeguarding Tomorrow's Data Landscape: Young Digital Citizens' Perspectives on Privacy within AI Systems.”
+
+        I am interested in contributing as a [**ADD Your Role: Educators and Parents, and AI developers and researchers**] and would like to participate in the focus groups.
+
+        Please let me know the next steps and any additional information needed from my side to facilitate my participation.
+
+        Thank you for considering my involvement. I look forward to your response.
+
+        Best regards,
+        ${userEmail}`);
+                    
+                    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
     }
 </script>
 
