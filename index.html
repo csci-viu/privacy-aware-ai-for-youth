@@ -54,11 +54,8 @@
                         <p class="text-white-75 mb-5">This project seeks to comprehensively explore privacy within AI systems, with a particular focus on the perspectives of young digital citizens aged 16-19.
                         </p>
                         <div class="input-group" style="justify-content: center;">
-                            <input type="email" class="form-control" placeholder="Enter your email" style="width: 250px;" required>
-                            <button class="btn btn-primary" type="submit">Submit</button>  
-                                        
-
-                        <!-- comment: "Do we need any other text for "submit"?" -->
+                            <input type="email" id="userEmail" class="form-control" placeholder="Stay Informed" style="width: 250px;" required>
+                            <button class="btn btn-primary" type="button" onclick="sendEmail()">Submit</button>
                         </div>
                         <hr class="divider" />
 
@@ -121,14 +118,14 @@
                         <div class="mt-5">
                             <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">Interviews</h3>
-                            <p class="text-muted mb-0">In-depth interviews for individual perspectives from educators and parents, and AI developers and researchers. Connect with us to participate, with or without survey completion.</p>
+                            <p class="text-muted mb-0">In-depth interviews for individual perspectives from educators and parents, and AI developers and researchers. <a href="#" onclick="generateEmail()">Connect with us</a> to participate, with or without survey completion.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
                             <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">Focus Group Study</h3>
-                            <p class="text-muted mb-0">Peer discussions in focus groups for educators and parents, and AI developers and researchers. Connect with us to join, with or without survey participation.</p>
+                            <p class="text-muted mb-0">Peer discussions in focus groups for educators and parents, and AI developers and researchers. <a href="#" onclick="generateEmail()">Connect with us</a> to join, with or without survey participation.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
@@ -245,7 +242,7 @@
                     </div>
                 </div>
                 <!-- comment: need to add mail -->
-                <a class="btn btn-light btn-xl mt-4" href="mailto:ajay.shrestha@viu.ca">Connect with Us</a>
+                <a class="btn btn-light btn-xl mt-4" id="connectWithUs" href="#" onclick="generateEmail()">Connect with Us</a>
             </div>
         </section>
         
@@ -300,5 +297,60 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script>
+            function sendEmail() {
+                const userEmail = document.getElementById('userEmail').value;
+                const email = 'ajay.shrestha@viu.ca'; 
+                const subject = 'Join the Mailing List for Safeguarding Tomorrow\'s Data Landscape';
+                const body = encodeURIComponent(`Dear Researcher,
+    
+                I am writing to express my interest in joining the mailing list for the research project titled “Safeguarding Tomorrow's Data Landscape: Young Digital Citizens' Perspectives on Privacy within AI Systems.” I would appreciate it if you could add me to the list so that I can receive updates and information related to this project.
+                
+                Thank you for your attention to this request.
+                
+                Best regards,
+                ${userEmail}`);
+                            
+                            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
+            }
+        </script>
+
+<script>
+    function generateEmail() {
+        // Prompt for user details and role selection
+        const userName = prompt('Please enter your name:');
+        const role = prompt('Select your role (educator/parent/AI developer/researcher):').toLowerCase();
+        const interviewsChecked = confirm('Do you want to participate in In-Depth Interviews?');
+        const focusGroupsChecked = confirm('Do you want to participate in Focus Groups?');
+
+        // Validate role
+        const validRoles = ['educator', 'parent', 'ai developer', 'researcher'];
+        if (!validRoles.includes(role)) {
+            alert('Invalid role selected. Please reload and try again.');
+            return;
+        }
+
+        // Construct email subject and body
+        const subject = 'Interest in Participating in Research Project';
+        const body = `Dear Researcher,
+
+        I am writing to express my interest in participating in your research project titled “Safeguarding Tomorrow's Data Landscape: Young Digital Citizens' Perspectives on Privacy within AI Systems.”
+
+        I am interested in contributing as a ${role} and would like to participate in the following:
+
+        ${interviewsChecked ? '[In-Depth Interviews]' : ''}${interviewsChecked && focusGroupsChecked ? ' and ' : ''}${focusGroupsChecked ? '[Focus Groups]' : ''}
+
+        Please let me know the next steps and any additional information needed from my side to facilitate my participation.
+
+        Thank you for considering my involvement. I look forward to your response.
+
+        Best regards,
+        ${userName}`;
+
+                // Open the default email client with the constructed email
+                window.location.href = `mailto:ajay.shrestha@viu.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+</script>
+
     </body>
 </html>
