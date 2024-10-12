@@ -126,14 +126,14 @@
                         <div class="mt-5">
                             <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">Interviews</h3>
-                            <p class="text-muted mb-0">In-depth interviews for individual perspectives from educators and parents, and AI developers and researchers. <a href="#" onclick="generateEmail1()">Connect with us</a> to participate, with or without survey completion.</p>
+                            <p class="text-muted mb-0">In-depth interviews for individual perspectives from educators and parents, and AI developers and researchers. <a href="#" onclick="generateEmail1(event)">Connect with us</a> to participate, with or without survey completion.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
                             <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">Focus Group Study</h3>
-                            <p class="text-muted mb-0">Peer discussions in focus groups for educators and parents, and AI developers and researchers. <a href="#" onclick="generateEmail2()">Connect with us</a> to join, with or without survey participation.</p>
+                            <p class="text-muted mb-0">Peer discussions in focus groups for educators and parents, and AI developers and researchers. <a href="#" onclick="generateEmail2(event)">Connect with us</a> to join, with or without survey participation.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
@@ -267,14 +267,14 @@
                         <div class="publication">
                             <h3 class="publication-title">Young Digital Citizens and Privacy in AI Systems: A Systematic Review of Perceptions, Concerns, and Expectations</h3>
                             <p class="publication-author">Authors - Ankur Barthwal, Molly Campbell, Austin Shouli, Saad Syed, Sandhya Joshi, Ajay Shrestha, Julita Vassileva</p>
-                            <p class="publication-date">Published on: Frontiers in Computer Science (To submit)</p>
+                            <p class="publication-date">Published on: Frontiers in Computer Science (Under Review)</p>
                             <a class="btn btn-primary btn-sm" href="#">Read More</a> (Available soon)
                         </div>
                         <hr class="divider-light" />
                         <div class="publication">
                             <h3 class="publication-title">Navigating AI to Unpack Youth Privacy Concerns: An In-Depth Exploration and Systematic Review</h3>
                             <p class="publication-author">Authors - Ankur Barthwal, Molly Campbell, Austin Shouli, Saad Syed, Sandhya Joshi, Ajay Shrestha</p>
-                            <p class="publication-date">Published on: IEEE (Under Review)</p>
+                            <p class="publication-date">Published on: IEEE (Accepted)</p>
                             <a class="btn btn-primary btn-sm" href="#">Read More</a> (Available soon)
                         </div>
                         <hr class="divider-light" />
@@ -361,7 +361,8 @@
 </script> -->
 
 <script>
-    function generateEmail1() {
+    function generateEmail1(event) {
+        event.preventDefault(); // Prevents the default link behavior
         const userEmail = document.getElementById('userEmail').value;
         const email = 'ajay.shrestha@viu.ca'; 
         const subject = 'Interest in Participating in Research Project';
@@ -383,7 +384,8 @@
 </script>
 
 <script>
-    function generateEmail2() {
+    function generateEmail2(event) {
+        event.preventDefault(); // Prevents the default link behavior
         const userEmail = document.getElementById('userEmail').value;
         const email = 'ajay.shrestha@viu.ca'; 
         const subject = 'Interest in Participating in Research Project';
