@@ -11109,3 +11109,8 @@ header.masthead h1, header.masthead .h1 {
  .col-lg-3:hover{
     transform: translateY(-10px);
  }
+
+ .rounded-image {
+  border-radius: 15px; /* Adjust the value for the desired roundness */
+  overflow: hidden; /* Ensures corners are visually clipped */
+}
