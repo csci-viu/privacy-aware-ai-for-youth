@@ -106,9 +106,9 @@
                                 </li>
                             </ul>
         
-        
                         </div>
-                        <a class="btn btn-light btn-xl" href="#Project">Project</a>
+                        <a class="btn btn-light btn-xl" href="#Project" onmouseover="this.style.boxShadow='0 0 10px 4px white'; this.style.transition='box-shadow 0.3s ease'" 
+                        onmouseout="this.style.boxShadow='none'">Project</a>
                     </div>
                 </div>
             </div>
@@ -136,7 +136,10 @@
                             <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">Interviews (Completed)</h3>
                             <p class="text-muted mb-0">
-                                We conducted in-depth interviews to gather individual perspectives from educators, parents, AI developers, and researchers. <a href="#" onclick="generateEmail1()">Connect with us</a> if you're interested in learning more about the findings or contributing to future research initiatives.
+                                We conducted in-depth interviews to gather individual perspectives from educators, parents, AI developers, and researchers. 
+                                <!-- <a href="#" onclick="generateEmail1()">Connect with us</a>  -->
+                                <a href="#connect-form" onclick="scrollAndHighlight(event)">Connect with us</a>
+                                if you're interested in learning more about the findings or contributing to future research initiatives.
                             </p>
                         </div>
                     </div>
@@ -144,7 +147,9 @@
                         <div class="mt-5">
                             <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">Focus Group Studies (Completed)</h3>
-                            <p class="text-muted mb-0">  We facilitated peer discussions through focus groups with educators, parents, AI developers, and researchers. If you're interested in learning more about the outcomes, follow our updates or <a href="#" onclick="generateEmail2(event)">connect with us</a>.
+                            <p class="text-muted mb-0">  We facilitated peer discussions through focus groups with educators, parents, AI developers, and researchers. If you're interested in learning more about the outcomes, follow our updates or 
+                            <!-- <a href="#" onclick="generateEmail2(event)">connect with us</a>. -->
+                            <a href="#connect-form" onclick="scrollAndHighlight(event)">connect with us.</a>
                             </p>
                         </div>
                     </div>
@@ -336,7 +341,13 @@
                     </div>
                 </div>
                 <!-- comment: need to add mail -->
-                <a class="btn btn-light btn-xl mt-4" id="connectWithUs" href="#" onclick="sendEmail()">Connect with Us</a>
+                <!-- <a class="btn btn-light btn-xl mt-4" id="connectWithUs" href="#" onclick="sendEmail()">Connect with Us</a> -->
+                <form id="connect-form" action="https://formspree.io/f/xrbpqelp" method="POST" target="_blank">
+                    <div class="input-group" style="justify-content: center;">
+                        <input id="email-input" type="email" name="email" class="form-control" placeholder="Enter your email" style="width: 250px;" required>
+                        <button class="btn btn-primary" type="submit">Connect with us</button>
+                    </div>
+                </form>
             </div>
         </section>
         
@@ -455,6 +466,26 @@
         <script src="js/scripts.js"></script>
 
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+        <script>
+            function scrollAndHighlight(event) {
+              event.preventDefault();
+              const target = document.getElementById("connect-form");
+              const input = document.getElementById("email-input");
+          
+              target.scrollIntoView({ behavior: "smooth", block: "center" });
+          
+              // Add highlight after scroll
+              setTimeout(() => {
+                input.classList.add("highlight-input");
+          
+                // Remove highlight after 2 seconds
+                setTimeout(() => {
+                  input.classList.remove("highlight-input");
+                }, 2000);
+              }, 600);
+            }
+          </script>
         
         <script>
             function sendEmail() {
