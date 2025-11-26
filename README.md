@@ -4,7 +4,8 @@ Privacy-Aware AI for Youth
 Overview
 
 Welcome to the Privacy-Aware AI for Youth repository! This project explores and promotes privacy-conscious artificial intelligence (AI) systems for young digital citizens. It provides research insights, best practices, and tools for ensuring privacy protection in AI applications used by youth, parents, educators, and AI developers.
-This initiative is part of a larger research project funded by the Office of the Privacy Commissioner of Canada (OPC). It contributes to the responsible development of AI systems that consider privacy.
+This initiative is part of a larger research project funded by the Office of the Privacy Commissioner of Canada (OPC). It contributes to the responsible development of AI systems that consider privacy. 
+Project Website with research instruments: https://csci-viu.github.io/privacy-aware-ai-for-youth/ 
 
 Objectives
 1. Investigate young digital citizens' perceptions, concerns, and expectations regarding privacy in AI systems.
